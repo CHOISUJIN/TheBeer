@@ -13,7 +13,10 @@ function fetchBeerList(page, pageSize) {
     return axios.get(`${config.baseUrl}?page=${page}&per_page=${pageSize}`);
 }
 
+function fetchBeer(id) {
+    return axios.get(`${config.baseUrl}/${id}`);
+}
 
 
 
-export {fetchBeerList}
+export {fetchBeerList, fetchBeer}

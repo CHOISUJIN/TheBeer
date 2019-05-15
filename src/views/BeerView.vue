@@ -1,22 +1,13 @@
 <template>
-    <div>
-        <ul>
-            <li v-for="(beer, index) in BeerList" v-bind:key="index"></li>
-        </ul>
-    </div>
+    <beer-item></beer-item>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import BeerItem from '../components/BeerItem.vue'
 
 export default {
-    created() {
-        this.$store.dispatch("FETCH_BEER");
-    },
-    computed : {
-        ...mapGetters({
-            BeerList : 'fetchBeerList'
-        })
+    components : {
+        BeerItem
     }
 }
 </script>
